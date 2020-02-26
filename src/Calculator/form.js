@@ -19,19 +19,23 @@ const Form = ({calculate, resultView}) =>{
                 <input type = "text" value ={text2} placeholder="Operand 2" onChange={changeText2}/>
                 <br/>
 
-                <button onClick={()=>{
+                <button onClick={(e)=>{
+                    e.preventDefault();
                     calculate(1, text1, text2);
                 }}>Add</button>
 
-                <button onClick={()=>{
+                <button onClick={(e)=>{
+                    e.preventDefault();
                     calculate(2, text1, text2);
                 }}>Sub</button>
 
-                <button onClick={()=>{
+                <button onClick={(e)=>{
+                    e.preventDefault();
                     calculate(3, text1, text2);
                 }}>Mul</button>
 
-                <button onClick={()=>{
+                <button onClick={(e)=>{
+                    e.preventDefault();
                     calculate(4, text1, text2);
                 }}>Div</button>
 
