@@ -48,14 +48,22 @@ const Form = ({calculate, resultView}) =>{
                     calculate(3, text1, text2);
                 }}>*</button>
 
+
+
                 <br/>
                 <button className="key" onClick={(e)=>{
                     e.preventDefault();
                     setText1("");
                     setText2("");
                 }}>Clear</button>
+
                 <button className="key">0</button>
-                <button className="key">%</button>
+
+                <button className="key"onClick={(e)=>{
+                    e.preventDefault();
+                    calculate(5, text1, text2);
+                }}>%</button>
+
                 <button className="key"onClick={(e)=>{
                     e.preventDefault();
                     calculate(4, text1, text2);

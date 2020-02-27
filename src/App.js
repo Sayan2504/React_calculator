@@ -33,6 +33,12 @@ const App = () => {
         else
           setResult ( operand1 / operand2 );
       }
+
+      else if(operator === 5){
+        operand1 = parseInt(operand1);
+        operand2 = parseInt(operand2);
+        setResult ( operand1 % operand2 );
+      }
   };
 
   const resultView = () =>{
