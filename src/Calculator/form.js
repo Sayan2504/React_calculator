@@ -2,50 +2,94 @@ import React, { useState } from 'react'
 import '../App'
 
 const Form = ({calculate, resultView}) =>{
-    const [text1,setText1] = useState([]);
-    const [text2,setText2] = useState([]);
+    const [text,setText] = useState([]);
 
-    const changeText1=(e)=>{
-        setText1(e.target.value)  
-    };
-
-    const changeText2=(e)=>{
-        setText2(e.target.value)  
+    const changeText=(e)=>{
+        setText(e.target.value)  
     };
 
     return(
         <div>
             <form>
-                <input className="text-field" type = "text" value ={text1} placeholder="Operand 1" onChange={changeText1}/>
-                <input className="text-field" type = "text" value ={text2} placeholder="Operand 2" onChange={changeText2}/>
-                <br/>
-                <input className="result-field" type="text" placeholder="Result" value={resultView()} readOnly/>
-                
-                <br/>
-                <button className="key">1</button>
-                <button className="key">2</button>
-                <button className="key">3</button>
+                <input className="text-field" type = "text" value ={text} placeholder="Enter expression" onChange={changeText} autoFocus/>
                 <button className="key" onClick={(e)=>{
                     e.preventDefault();
-                    calculate(1, text1, text2);
+                    
+                }}>C</button>
+
+
+                <br/>
+                <input className="text-field" type="text" placeholder="Result" value={resultView()} readOnly/>
+                <button className="key" onClick={(e)=>{
+                    e.preventDefault();
+                    calculate(text);
+                }}>=</button>
+
+
+                <br/>
+                <button className="key" onClick={(e)=>{
+                    e.preventDefault();
+                    setText(prev => prev.concat("1"));
+                }}>1</button>
+
+                <button className="key" onClick={(e)=>{
+                    e.preventDefault();
+                    setText(prev => prev.concat("2"));
+                }}>2</button>
+
+                <button className="key" onClick={(e)=>{
+                    e.preventDefault();
+                    setText(prev => prev.concat("3"));
+                }}>3</button>
+
+                <button className="key" onClick={(e)=>{
+                    e.preventDefault();
+                    setText(prev => prev.concat("+")); 
                 }}>+</button>
 
                 <br/>
-                <button className="key">4</button>
-                <button className="key">5</button>
-                <button className="key">6</button>
                 <button className="key" onClick={(e)=>{
                     e.preventDefault();
-                    calculate(2, text1, text2);
+                    setText(prev => prev.concat("4"));
+                }}>4</button>
+
+                <button className="key" onClick={(e)=>{
+                    e.preventDefault();
+                    setText(prev => prev.concat("5"));
+                }}>5</button>
+
+                <button className="key" onClick={(e)=>{
+                    e.preventDefault();
+                    setText(prev => prev.concat("6"));
+                }}>6</button>
+
+                <button className="key" onClick={(e)=>{
+                    e.preventDefault();
+                    setText(prev => prev.concat("-"));
                 }}>-</button>
                 
+
+
+
                 <br/>
-                <button className="key">7</button>
-                <button className="key">8</button>
-                <button className="key">9</button>
                 <button className="key" onClick={(e)=>{
                     e.preventDefault();
-                    calculate(3, text1, text2);
+                    setText(prev => prev.concat("7"));
+                }}>7</button>
+
+                <button className="key" onClick={(e)=>{
+                    e.preventDefault();
+                    setText(prev => prev.concat("8"));
+                }}>8</button>
+
+                <button className="key" onClick={(e)=>{
+                    e.preventDefault();
+                    setText(prev => prev.concat("9"));
+                }}>9</button>
+
+                <button className="key" onClick={(e)=>{
+                    e.preventDefault();
+                    setText(prev => prev.concat("*"));
                 }}>*</button>
 
 
@@ -53,20 +97,22 @@ const Form = ({calculate, resultView}) =>{
                 <br/>
                 <button className="key" onClick={(e)=>{
                     e.preventDefault();
-                    setText1("");
-                    setText2("");
-                }}>Clear</button>
+                    setText("");
+                }}>AC</button>
 
-                <button className="key">0</button>
-
-                <button className="key"onClick={(e)=>{
+                <button className="key" onClick={(e)=>{
                     e.preventDefault();
-                    calculate(5, text1, text2);
+                    setText(prev => prev.concat("0"));
+                }}>0</button>
+
+                <button className="key" onClick={(e)=>{
+                    e.preventDefault();
+                    setText(prev => prev.concat("%"));
                 }}>%</button>
 
-                <button className="key"onClick={(e)=>{
+                <button className="key" onClick={(e)=>{
                     e.preventDefault();
-                    calculate(4, text1, text2);
+                    setText(prev => prev.concat("/"));
                 }}>/</button>
 
                
