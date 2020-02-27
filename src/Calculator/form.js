@@ -8,6 +8,7 @@ const Form = ({calculate, resultView}) =>{
         setText(e.target.value)  
     };
 
+
     return(
         <div>
             <form>
@@ -18,12 +19,16 @@ const Form = ({calculate, resultView}) =>{
                 }}>C</button>
 
 
+
+
                 <br/>
                 <input className="text-field" type="text" placeholder="Result" value={resultView()} readOnly/>
                 <button className="key" onClick={(e)=>{
                     e.preventDefault();
                     calculate(text);
                 }}>=</button>
+
+
 
 
                 <br/>
@@ -46,6 +51,9 @@ const Form = ({calculate, resultView}) =>{
                     e.preventDefault();
                     setText(prev => prev.concat("+")); 
                 }}>+</button>
+
+
+
 
                 <br/>
                 <button className="key" onClick={(e)=>{
@@ -91,6 +99,8 @@ const Form = ({calculate, resultView}) =>{
                     e.preventDefault();
                     setText(prev => prev.concat("*"));
                 }}>*</button>
+
+
 
 
 
