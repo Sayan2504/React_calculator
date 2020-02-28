@@ -1,14 +1,32 @@
 .cal-main{
   text-align: center;
 }
+.heading{
+  color:black;
+  background-color:  rgb(185, 179, 179);
+  margin-bottom: 3px;
+  display: inline-block;
+  width: 400px;
+  font-family: 'Times New Roman', Times, serif
+  
+}
 
 .text-field{
-  width: 285px;
+  width: 295px;
   height: 30px;
+  background-color: rgb(185, 179, 179);
+  color:black;
+  border-radius: 5px;
+  font-style: italic;
 }
 
 .key{
   width: 100px;
   height: 40px;
+  box-shadow: 15px;
+  background-color: rgb(185, 179, 179);
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 20px;
 }
 

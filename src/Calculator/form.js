@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import '../App'
 
-const Form = ({calculate, resultView}) =>{
+const Form = ({calculate, resultView, resultDelete}) =>{
     const [text,setText] = useState("");
 
     const changeText=(e)=>{
@@ -111,6 +111,7 @@ const Form = ({calculate, resultView}) =>{
                 <button className="key" onClick={(e)=>{
                     e.preventDefault();
                     setText("");
+                    resultDelete();
                 }}>AC</button>
 
                 <button className="key" onClick={(e)=>{
