@@ -2,12 +2,15 @@ import React, { useState } from 'react'
 import '../App'
 
 const Form = ({calculate, resultView}) =>{
-    const [text,setText] = useState([]);
+    const [text,setText] = useState("");
 
     const changeText=(e)=>{
         setText(e.target.value)  
     };
 
+    const backspace=(text)=>{
+        setText(prev => prev.slice(0,-1));
+    }
 
     return(
         <div>
@@ -15,7 +18,7 @@ const Form = ({calculate, resultView}) =>{
                 <input className="text-field" type = "text" value ={text} placeholder="Enter expression" onChange={changeText} autoFocus/>
                 <button className="key" onClick={(e)=>{
                     e.preventDefault();
-                    
+                    backspace(text);
                 }}>C</button>
 
 
